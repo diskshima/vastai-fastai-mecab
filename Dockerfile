@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
   cd mecab-ipadic-neologd && \
-  ./bin/install-mecab-ipadic-neologd -n -y -u -p "$(mecab-config --dicdir)"
+  ./bin/install-mecab-ipadic-neologd -n -y -u -p "$(mecab-config --dicdir)/mecab-ipadic-neologd/"
 
 RUN pip install -U pip
 RUN pip install -U \
