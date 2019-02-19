@@ -16,9 +16,11 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
 RUN pip install -U pip
 RUN pip install -U \
   fastai \
+  jupyter \
   mecab-python3 \
   numpy \
   pandas \
-  torch
+  torch \
+  torchvision
 
 CMD ["/bin/bash"]
