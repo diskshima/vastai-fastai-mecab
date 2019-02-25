@@ -17,10 +17,15 @@ RUN pip install -U pip
 RUN pip install -U \
   fastai \
   jupyter \
+  jupyter_contrib_nbextensions \
+  jupyter_nbextensions_configurator \
   mecab-python3 \
   numpy \
   pandas \
   torch \
   torchvision
+
+RUN jupyter contrib nbextension install --user && \
+  jupyter nbextensions_configurator enable --user
 
 CMD ["/bin/bash"]
