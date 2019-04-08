@@ -1,5 +1,5 @@
 FROM vastai/pytorch
-MAINTAINER Daisuke Shimamoto
+MAINTAINER Daisuke Shimamoto <diskshima@gmail.com>
 
 RUN apt-get update && apt-get install -y \
   file \
@@ -14,8 +14,10 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
   ./bin/install-mecab-ipadic-neologd -n -y -u -p "$(mecab-config --dicdir)/mecab-ipadic-neologd/"
 
 RUN pip install -U pip
+
+ARG fastai_ver=1.0.51
 RUN pip install -U \
-  fastai \
+  fastai==$fastai_ver \
   jupyter \
   jupyter_contrib_nbextensions \
   jupyter_nbextensions_configurator \
