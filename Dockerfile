@@ -15,7 +15,7 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
 
 RUN pip install -U pip
 
-ARG fastai_ver=1.0.51
+ARG fastai_ver=1.0.59
 RUN pip install -U \
   fastai==$fastai_ver \
   jupyter \
@@ -24,6 +24,7 @@ RUN pip install -U \
   mecab-python3 \
   numpy \
   pandas \
+  scikit-learn \
   torch \
   torchvision
 
